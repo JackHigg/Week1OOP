@@ -1,0 +1,59 @@
+package Worksheet2;
+
+public class Worksheet2 {
+
+    public static void main(String[] args) {
+
+        int[] IntegerArray1 = {8, 2, 5, 4, 3, 6, 7, 1, 9, 10};
+
+        DisplayArray(IntegerArray1);
+
+        BubbleSort(IntegerArray1);
+
+    }
+
+    public static void DisplayArray(int[] Array) {   //int[] (name) allows any int array to be passed into this method
+
+        for (int i : Array) {    //shorthand for(int i=o;i<IntegerArray1;i++)
+            System.out.println(i);
+        }
+
+
+    }
+
+
+    static void BubbleSort(int[] IntegerArray1) {
+
+        int ArrayLength = IntegerArray1.length;
+
+        //System.out.println("Array length " +ArrayLength);
+
+
+        boolean swapped = false;
+        int temp = 0;
+
+        while (!swapped) {
+
+            swapped=true;
+
+            for (int x = 0; x < ArrayLength-1; x++) {
+
+                //System.out.println(x);
+
+
+                if (IntegerArray1[x] > IntegerArray1[x + 1]) {
+                    temp = IntegerArray1[x];
+                    IntegerArray1[x] = IntegerArray1[x + 1];
+                    IntegerArray1[x+1]=temp;
+
+                    swapped=false;
+                }
+
+            }
+        }
+
+        DisplayArray(IntegerArray1);
+
+    }
+
+}
